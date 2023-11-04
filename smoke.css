@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+video{
+    object-fit: cover;
+}
+
+body {
+    background-color: black;
+}
+
+section {
+    width: 100vw;  /* Utilisation de la largeur de la fenêtre de visualisation */
+    height: 100vh;  /* Utilisation de la hauteur de la fenêtre de visualisation */
+    display: flex;  /* Utilisation de Flexbox */
+    justify-content: center;  /* Centrage horizontal */
+    align-items: center;  /* Centrage vertical */
+    overflow: hidden;  /* Masquer tout ce qui dépasse du conteneur */
+    position: relative;  /* Position relative pour positionner les éléments enfants */
+}
+
+h1{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    font-size: 5em;
+    font-family: sans-serif;
+}
+
+h1 span{
+    display: inline-block;
+    opacity: 0;  /* Par défaut, l'opacité est de 0, ce qui rend la lettre invisible */
+    animation: animate 1s ease-in-out forwards;  /* 'forwards' pour conserver le dernier état de l'animation */
+}
+
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: rotateY(90deg);
+        filter: blur(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: rotateY(0deg);
+        filter: blur(0px);
+    }
+}
+
+/* Animation delays */
+h1 span:nth-child(1) { animation-delay: 1s; }
+h1 span:nth-child(2) { animation-delay: 1.4s; }
+h1 span:nth-child(3) { animation-delay: 2.1s; }
+h1 span:nth-child(4) { animation-delay: 2.6s; }
+h1 span:nth-child(5) { animation-delay: 3.0s; }
+h1 span:nth-child(6) { animation-delay: 3.5s; }
